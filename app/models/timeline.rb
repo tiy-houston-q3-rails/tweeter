@@ -7,7 +7,7 @@ class Timeline
   end
 
   def messages
-    Message.where(user_id: all_user_ids)
+    Message.where(user_id: all_user_ids).order("created_at DESC")
   end
 
   private

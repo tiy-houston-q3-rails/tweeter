@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :followers
   has_many :messages
 
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true
   validates :name, presence: true
 
   def follow!(other_user)
@@ -17,4 +17,6 @@ class User < ActiveRecord::Base
   def follow?(other_user)
     followers.where(them_id: other_user.id).any?
   end
+
+
 end

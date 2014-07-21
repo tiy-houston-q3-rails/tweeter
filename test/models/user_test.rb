@@ -12,6 +12,12 @@ class UserTest < ActiveSupport::TestCase
     assert_equal true, @user.errors[:username].any?
   end
 
+  def test_username_is_unique
+    create_user("bill")
+    User.create username: "bill", email: "bill@bill.com", name: "bill.com", password: "123345678", password_confirmation: "123345678"
+    assert_equal 1, User.count
+  end
+
   def test_name_is_required
     @user.valid?
     assert_equal true, @user.errors[:name].any?

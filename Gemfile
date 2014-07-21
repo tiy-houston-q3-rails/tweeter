@@ -49,6 +49,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'faker', github: 'stympy/faker'
 end
 
 group :test do

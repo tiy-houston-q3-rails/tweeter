@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/stympy/faker.git
+  revision: d0905e34a1c9ec32b6d570eb6062ab06f70924b3
+  specs:
+    faker (1.4.2)
+      i18n (~> 0.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -163,6 +170,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.0.0)
   devise
+  faker!
   jbuilder (~> 2.0)
   jquery-rails
   launchy
