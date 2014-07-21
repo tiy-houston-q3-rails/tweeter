@@ -42,6 +42,7 @@ gem 'spring',        group: :development
 gem 'devise'
 gem 'simple_form', '3.1.0.rc2'
 gem 'bootstrap-sass'
+gem 'faker', github: 'stympy/faker'
 
 
 group :development, :test do
@@ -49,7 +50,6 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'faker', github: 'stympy/faker'
 end
 
 group :test do
