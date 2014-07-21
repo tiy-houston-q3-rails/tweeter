@@ -9,4 +9,12 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true
   validates :name, presence: true
+
+  def follow!(other_user)
+    followers.create them_id: other_user.id
+  end
+
+  def follow?(other_user)
+    followers.where(them_id: other_user.id).any?
+  end
 end
