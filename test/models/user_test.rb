@@ -18,8 +18,8 @@ class UserTest < ActiveSupport::TestCase
   end
 
   def test_can_follow_another_user
-    me = User.create! username: "me", name: "Mini Me", email: "me@example.com", password: "memememe", password_confirmation: "memememe"
-    you = User.create! username: "you", name: "Mini You", email: "you@example.com", password: "memememe", password_confirmation: "memememe"
+    me = create_user("me")
+    you = create_user("you")
     me.follow!(you)
     assert_equal true, me.follow?(you)
   end

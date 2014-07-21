@@ -8,4 +8,9 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  def create_user(username)
+    User.create! username: username, name: "Mini #{username}", email: "#{username}@example.com", password: "memememe", password_confirmation: "memememe"
+  end
+  
 end

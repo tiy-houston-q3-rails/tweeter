@@ -7,6 +7,16 @@ class Timeline
   end
 
   def messages
-    user.messages
+    Message.where(user_id: all_user_ids)
+  end
+
+  private
+
+  def all_user_ids
+    [@user.id] + their_ids
+  end
+
+  def their_ids
+    @user.followers.pluck(:them_id)
   end
 end
