@@ -1,0 +1,8 @@
+
+<h1>Users</h1>
+
+<ul>
+<% @users.each do |user| %>
+  <li><%= link_to "Follow #{user.username.titlecase}", follow_path(user_id: user.id), method: :post, class: "btn btn-default" %></li>
+<% end %>
+</ul>
