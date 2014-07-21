@@ -2,6 +2,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'minitest/pride'
+require 'capybara/rails'
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
@@ -12,5 +13,10 @@ class ActiveSupport::TestCase
   def create_user(username)
     User.create! username: username, name: "Mini #{username}", email: "#{username}@example.com", password: "memememe", password_confirmation: "memememe"
   end
-  
+
+end
+
+class ActionDispatch::IntegrationTest
+  # Make the Capybara DSL available in all integration tests
+  include Capybara::DSL
 end
