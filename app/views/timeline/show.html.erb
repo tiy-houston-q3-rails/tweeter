@@ -3,23 +3,13 @@
 
 
 
-
-<ul class="media-list">
+<aside>
+  SUP!
+</aside>
+<div class="timeline">
   <% @messages.each do |message| %>
+    <%= render message %>
 
-    <li class="media">
-      <a class="pull-left" href="#">
-
-        <%= image_tag message.user.photo_url, class: "media-object timeline-photo" %>
-
-      </a>
-      <div class="media-body">
-        <h4 class="media-heading"><%= message.user.username %></h4>
-        <p><%= message.body %></p>
-
-        <time class="timeago" datetime="<%= message.created_at.getutc.iso8601 %>"><%= message.created_at.strftime("%b %d, %Y") %></time>
-      </div>
-    </li>
   <% end %>
 
-</ul>
+</div>

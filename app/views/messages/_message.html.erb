@@ -1,0 +1,13 @@
+<div class="comment">
+  <div class="comment-image">
+    <%= image_tag message.user.photo_url, class: "media-object timeline-photo" %>
+  </div>
+  <div class="comment-content">
+    <h1><%= message.user.username %></h1>
+    <p><%= message.body %></p>
+    <p class="comment-detail">
+      <time class="timeago" datetime="<%= message.created_at.getutc.iso8601 %>"><%= message.created_at.strftime("%b %d, %Y") %></time>
+
+    </p>
+  </div>
+</div>
