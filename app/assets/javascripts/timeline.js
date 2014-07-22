@@ -1,4 +1,16 @@
 jQuery(document).ready(function() {
+  $(".search-and-submit form").on("submit", function(){
+    var searchFor = $.trim($("#search").val());
+    if (searchFor.length === 0){
+      return false;
+    } else {
+      return true;
+    }
+  })
+});
+
+
+jQuery(document).ready(function() {
   jQuery("time.timeago").timeago();
 });
 

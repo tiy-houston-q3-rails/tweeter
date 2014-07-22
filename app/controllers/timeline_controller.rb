@@ -6,4 +6,8 @@ class TimelineController < ApplicationController
     @messages = Timeline.new(current_user).messages
   end
 
+  def search
+    @messages = Search.new.messages(params[:search]).order("created_at DESC")
+  end
+
 end

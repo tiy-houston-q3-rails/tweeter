@@ -1,0 +1,16 @@
+
+<h1>Search Results</h1>
+
+
+<aside>
+  SUP!
+</aside>
+<div class="timeline">
+  <h3>Found <%= @messages.count %> results for <em><%= params[:search] %></em></h3>
+  
+  <% @messages.each do |message| %>
+    <%= render message %>
+
+  <% end %>
+
+</div>

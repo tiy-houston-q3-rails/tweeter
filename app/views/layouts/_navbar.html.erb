@@ -1,6 +1,6 @@
 <header class="navigation">
   <div class="navigation-wrapper">
-    <a href="javascript:void(0)" class="logo">
+    <a href="/" class="logo">
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="">
     </a>
     <a href="" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
@@ -32,10 +32,13 @@
     <div class="navigation-tools">
       <div class="search-bar">
         <div class="search-and-submit">
-          <input type="search" placeholder="Enter Search" />
-          <button type="submit">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="">
-          </button>
+
+          <%= form_tag search_path, method: :get do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Enter Search" %>
+            <%= button_tag type: "submit", id: "submit-search" do %>
+              <%= image_tag "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" %>
+            <% end %>
+          <% end %>
         </div>
       </div>
       <a href="javascript:void(0)" class="sign-up">Sign Up</a>
