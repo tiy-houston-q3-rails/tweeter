@@ -44,6 +44,7 @@ gem 'simple_form', '3.1.0.rc2'
 gem 'faker', github: 'stympy/faker'
 gem 'bourbon'
 gem 'neat'
+gem 'bitters'
 
 group :production do
   gem 'rails_12factor'
